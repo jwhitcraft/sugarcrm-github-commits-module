@@ -44,7 +44,7 @@
           'name' => 'Github Commits',
           'published_date' => '2010-12-15 20:38:38',
           'type' => 'module',
-          'version' => '0.9.0',
+          'version' => '1.0.0',
           'remove_tables' => 'prompt',
           );
 $installdefs = array (
