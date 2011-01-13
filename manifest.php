@@ -103,6 +103,10 @@ $installdefs = array (
     	'from' => '<basepath>/custom/modules/DynamicFields/templates/Fields',
     	'to' => 'custom/modules/DynamicFields/templates/Fields',
     ),
+    array (
+    	'from' => '<basepath>/GitPostPushCapture.php',
+    	'to' => 'GitPostPushCapture.php',
+    ),
   ),
   'language' => 
   array (
