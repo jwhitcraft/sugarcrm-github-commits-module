@@ -62,5 +62,9 @@ $mod_strings = array (
   'LBL_COMMITER' => 'commiter',
   'LBL_COMMITTER' => 'Committer',
   'LBL_COMMIT_HASH' => 'Hash',
+  'LBL_GITHUB_CONNECTOR' => 'Configure Github Connector',
+    'LBL_GITHB_ACCESS_HASH' => 'URL Access Hash',
+    'LBL_GITHUB_CALLBACK_URL' => 'Github Service URL',
+    'LBL_GITHUB_GENERATE' => 'Generate Random Key',
 );
 ?>

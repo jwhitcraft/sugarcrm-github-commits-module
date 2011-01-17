@@ -1,22 +1,26 @@
 <?php
 /*********************************************************************************
- * This is the git post recieve capture file which takes a json payload from github
- * and creates github commit records in Sugar appropriately assocated to mentioned
+ * This is the git post receive capture file which takes a json payload from github
+ * and creates github commit records in Sugar appropriately associated to mentioned
  * Bugs and other modules.
- * Note: $authKey should be unique and used in the post-recieve url as follows
+ * Note: $authKey should be unique and used in the post-receive url as follows
  * http://URLtoSugarInstance/GitPostPushCapture.php?key=$authKey
  ********************************************************************************/
-$authKey = '74675df0cdce82c000b420064a728e11';
-if (!(isset($_POST['key'])) || ($_POST['key'] != $authKey)) {
-    die("invalid entry point\n");
-}
-// load the github payload from post
-$decoded = json_decode($_POST['payload']);
+
 
 // Set up access to sugar db and current user
 ini_set('display_errors', false);
 define('sugarEntry', true);
 require_once('include/entryPoint.php');
+
+
+if (!(isset($_POST['key'])) || ($_POST['key'] != $sugar_config['github_key'])) {
+    die("Invalid Entry Point\n");
+}
+// load the github payload from post
+$decoded = json_decode($_POST['payload']);
+
+
 include('modules/githb_commits/githb_commits.php');
 include('modules/Bugs/Bug.php');
 include('modules/ITRequests/ITRequest.php');

@@ -1,4 +1,4 @@
-    <?php
+<?php
 /*********************************************************************************
  * The contents of this file are subject to the SugarCRM Enterprise Subscription
  * Agreement ("License") which can be viewed at
@@ -26,229 +26,132 @@
  * by SugarCRM are Copyright (C) 2004-2010 SugarCRM, Inc.; All Rights Reserved.
  ********************************************************************************/
 
-    $manifest = array (
-         'acceptable_sugar_versions' => 
-          array (
-            
-          ),
-          'acceptable_sugar_flavors' =>
-          array(
-            'ENT'
-          ),
-          'readme'=>'',
-          'key'=>'github',
-          'author' => 'Jon Whitcraft & David Tam',
-          'description' => 'A module to store commits from github in',
-          'icon' => '',
-          'is_uninstallable' => true,
-          'name' => 'Github Commits',
-          'published_date' => '2010-12-15 20:38:38',
-          'type' => 'module',
-          'version' => '1.0.0',
-          'remove_tables' => 'prompt',
-          );
-$installdefs = array (
-  'id' => 'github',
-  'beans' => 
-  array (
-    0 => 
-    array (
-      'module' => 'githb_commits',
-      'class' => 'githb_commits',
-      'path' => 'modules/githb_commits/githb_commits.php',
-      'tab' => false,
+$manifest = array(
+    'acceptable_sugar_versions' => array('regex_matches' => array('6\.[012]\..*')),
+    'acceptable_sugar_flavors' => array('PRO', 'ENT'),
+    'readme' => '',
+    'key' => 'github',
+    'author' => 'Jon Whitcraft <jwhitcraft@sugarcrm.com> & David Tam <dtam@sugarcrm.com>',
+    'description' => 'A module to store commits from github in',
+    'icon' => '',
+    'is_uninstallable' => true,
+    'name' => 'Github Commits',
+    'published_date' => '2010-12-15 20:38:38',
+    'type' => 'module',
+    'version' => '1.1.0',
+    'remove_tables' => 'prompt',
+);
+$installdefs = array(
+    'id' => 'github',
+    'beans' =>
+    array(
+        array(
+            'module' => 'githb_commits',
+            'class' => 'githb_commits',
+            'path' => 'modules/githb_commits/githb_commits.php',
+            'tab' => false,
+        ),
     ),
-  ),
-  'layoutdefs' => 
-  array (
-    0 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/layoutdefs/Bugs.php',
-      'to_module' => 'Bugs',
+    'layoutdefs' =>
+    array(
+        array(
+            'from' => '<basepath>/SugarModules/relationships/layoutdefs/Bugs.php',
+            'to_module' => 'Bugs',
+        ),
+        array(
+            'from' => '<basepath>/SugarModules/relationships/layoutdefs/ITRequests.php',
+            'to_module' => 'ITRequests',
+        ),
     ),
-    1 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/layoutdefs/ITRequests.php',
-      'to_module' => 'ITRequests',
+    'relationships' =>
+    array(
+        array(
+            'meta_data' => '<basepath>/SugarModules/relationships/relationships/githb_commits_bugsMetaData.php',
+        ),
+        array(
+            'meta_data' => '<basepath>/SugarModules/relationships/relationships/githb_commits_itrequestsMetaData.php',
+        ),
     ),
-  ),
-  'relationships' => 
-  array (
-    0 => 
-    array (
-      'meta_data' => '<basepath>/SugarModules/relationships/relationships/githb_commits_bugsMetaData.php',
+    'image_dir' => '<basepath>/icons',
+    'copy' =>
+    array(
+        array(
+            'from' => '<basepath>/SugarModules/modules/githb_commits',
+            'to' => 'modules/githb_commits',
+        ),
+        array(
+            'from' => '<basepath>/custom/include/SugarFields/Fields/Chop',
+            'to' => 'custom/include/SugarFields/Fields/Chop',
+        ),
+        array(
+            'from' => '<basepath>/custom/include/SugarFields/Fields/Github',
+            'to' => 'custom/include/SugarFields/Fields/Github',
+        ),
+        array(
+            'from' => '<basepath>/custom/modules/DynamicFields/templates/Fields',
+            'to' => 'custom/modules/DynamicFields/templates/Fields',
+        ),
+        array(
+            'from' => '<basepath>/GitPostPushCapture.php',
+            'to' => 'GitPostPushCapture.php',
+        ),
     ),
-    1 => 
-    array (
-      'meta_data' => '<basepath>/SugarModules/relationships/relationships/githb_commits_itrequestsMetaData.php',
+    'language' =>
+    array(
+        array(
+            'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
+            'to_module' => 'githb_commits',
+            'language' => 'en_us',
+        ),
+        array(
+            'from' => '<basepath>/SugarModules/relationships/language/Bugs.php',
+            'to_module' => 'Bugs',
+            'language' => 'en_us',
+        ),
+        array(
+            'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
+            'to_module' => 'githb_commits',
+            'language' => 'en_us',
+        ),
+        array(
+            'from' => '<basepath>/SugarModules/relationships/language/ITRequests.php',
+            'to_module' => 'ITRequests',
+            'language' => 'en_us',
+        ),
+        array(
+            'from' => '<basepath>/SugarModules/language/application/en_us.lang.php',
+            'to_module' => 'application',
+            'language' => 'en_us',
+        ),
+        array(
+            'from' => '<basepath>/SugarModules/language/application/en_us.admin.php',
+            'to_module' => 'Administration',
+            'language' => 'en_us',
+        ),
     ),
-  ),
-  'image_dir' => '<basepath>/icons',
-  'copy' => 
-  array (
-    0 => 
-    array (
-      'from' => '<basepath>/SugarModules/modules/githb_commits',
-      'to' => 'modules/githb_commits',
+    'vardefs' =>
+    array(
+        array(
+            'from' => '<basepath>/SugarModules/relationships/vardefs/githb_commits_bugs_githb_commits.php',
+            'to_module' => 'githb_commits',
+        ),
+        array(
+            'from' => '<basepath>/SugarModules/relationships/vardefs/githb_commits_bugs_Bugs.php',
+            'to_module' => 'Bugs',
+        ),
+        array(
+            'from' => '<basepath>/SugarModules/relationships/vardefs/githb_commits_itrequests_githb_commits.php',
+            'to_module' => 'githb_commits',
+        ),
+        array(
+            'from' => '<basepath>/SugarModules/relationships/vardefs/githb_commits_itrequests_ITRequests.php',
+            'to_module' => 'ITRequests',
+        ),
     ),
-    array (
-    	'from' => '<basepath>/custom/include/SugarFields/Fields/Chop',
-    	'to' => 'custom/include/SugarFields/Fields/Chop',
+    'administration' => array(
+        array('from' => '<basepath>/administration/githubadmin.php'),
     ),
-    array (
-    	'from' => '<basepath>/custom/include/SugarFields/Fields/Github',
-    	'to' => 'custom/include/SugarFields/Fields/Github',
+    'layoutfields' =>
+    array(
     ),
-    array (
-    	'from' => '<basepath>/custom/modules/DynamicFields/templates/Fields',
-    	'to' => 'custom/modules/DynamicFields/templates/Fields',
-    ),
-    array (
-    	'from' => '<basepath>/GitPostPushCapture.php',
-    	'to' => 'GitPostPushCapture.php',
-    ),
-  ),
-  'language' => 
-  array (
-    0 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
-      'to_module' => 'githb_commits',
-      'language' => 'en_us',
-    ),
-    1 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
-      'to_module' => 'githb_commits',
-      'language' => 'ja',
-    ),
-    2 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
-      'to_module' => 'githb_commits',
-      'language' => 'fr_fr',
-    ),
-    3 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
-      'to_module' => 'githb_commits',
-      'language' => 'zh_cn',
-    ),
-    4 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/Bugs.php',
-      'to_module' => 'Bugs',
-      'language' => 'en_us',
-    ),
-    5 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/Bugs.php',
-      'to_module' => 'Bugs',
-      'language' => 'ja',
-    ),
-    6 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/Bugs.php',
-      'to_module' => 'Bugs',
-      'language' => 'fr_fr',
-    ),
-    7 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/Bugs.php',
-      'to_module' => 'Bugs',
-      'language' => 'zh_cn',
-    ),
-    8 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
-      'to_module' => 'githb_commits',
-      'language' => 'en_us',
-    ),
-    9 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
-      'to_module' => 'githb_commits',
-      'language' => 'ja',
-    ),
-    10 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
-      'to_module' => 'githb_commits',
-      'language' => 'fr_fr',
-    ),
-    11 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
-      'to_module' => 'githb_commits',
-      'language' => 'zh_cn',
-    ),
-    12 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/ITRequests.php',
-      'to_module' => 'ITRequests',
-      'language' => 'en_us',
-    ),
-    13 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/ITRequests.php',
-      'to_module' => 'ITRequests',
-      'language' => 'ja',
-    ),
-    14 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/ITRequests.php',
-      'to_module' => 'ITRequests',
-      'language' => 'fr_fr',
-    ),
-    15 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/language/ITRequests.php',
-      'to_module' => 'ITRequests',
-      'language' => 'zh_cn',
-    ),
-    16 => 
-    array (
-      'from' => '<basepath>/SugarModules/language/application/en_us.lang.php',
-      'to_module' => 'application',
-      'language' => 'en_us',
-    ),
-  ),
-  'vardefs' => 
-  array (
-    0 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/vardefs/githb_commits_bugs_githb_commits.php',
-      'to_module' => 'githb_commits',
-    ),
-    1 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/vardefs/githb_commits_bugs_Bugs.php',
-      'to_module' => 'Bugs',
-    ),
-    2 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/vardefs/githb_commits_itrequests_githb_commits.php',
-      'to_module' => 'githb_commits',
-    ),
-    3 => 
-    array (
-      'from' => '<basepath>/SugarModules/relationships/vardefs/githb_commits_itrequests_ITRequests.php',
-      'to_module' => 'ITRequests',
-    ),
-  ),
-  'layoutfields' => 
-  array (
-    0 => 
-    array (
-      'additional_fields' => 
-      array (
-      ),
-    ),
-    1 => 
-    array (
-      'additional_fields' => 
-      array (
-      ),
-    ),
-  ),
 );
