@@ -28,7 +28,7 @@
 
 $manifest = array(
     'acceptable_sugar_versions' => array('regex_matches' => array('6\.[012]\..*')),
-    'acceptable_sugar_flavors' => array('PRO', 'ENT'),
+    'acceptable_sugar_flavors' => array('PRO', 'ENT','COM'),
     'readme' => '',
     'key' => 'github',
     'author' => 'Jon Whitcraft <jwhitcraft@sugarcrm.com> & David Tam <dtam@sugarcrm.com>',
