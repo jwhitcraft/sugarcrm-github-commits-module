@@ -90,7 +90,7 @@ function gh_log($message)
 {
     $dir = dirname(__FILE__);
     $logger = fopen($dir . '/github.log', 'a');
-    $msg = date('r') . ' - ' . $message;
+    $msg = date('r') . ' - ' . $message . PHP_EOL;
     fwrite($logger, $msg);
     fclose($logger);
 }
