@@ -10,5 +10,4 @@ Future Additions
 ----------------
 * Support For Associating to Users
 * Support For Associating to Contacts
-* Logging in the Capture File
 * Ability to Enable and Disable from the Admin Panel
