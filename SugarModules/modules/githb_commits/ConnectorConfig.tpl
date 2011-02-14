@@ -57,7 +57,7 @@
                 <table id="connectorConfig" name="connectorConfig" width="100%" border="0" cellspacing="1"
                        cellpadding="0" class="edit view">
                     <tr>
-                        <th align="left" scope="row" colspan="4">
+                        <th align="left" scope="row" colspan="2">
                             <h4>
                             {$MOD.LBL_GITHUB_CONNECTOR}
                             </h4>
