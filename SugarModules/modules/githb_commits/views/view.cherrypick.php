@@ -21,27 +21,8 @@ class githb_commitsViewcherrypick extends SugarView
 
         // Form to select the commits
         if (!(isset($_REQUEST['commits']))) {
-            $output = <<<EOQ
-		    <form method=post action="{$_SERVER['REQUEST_URI']}">
-		    <table border="0" cellpadding="0" cellspacing="0" width="50%">
-		    <tr><td width="100%" colspan = 2 class="tabDetailViewDL"> 
-		    Please enter a valid github commit guid. Multiple commits may be imported by seperating the commits with commas eg "155258c40ef46c5b1461, 3781faff4cde32f13fe2, 929b2a92e4b2de79b19c" 
-		    </td>
-		    </tr>
-			<tr>
-		    <td width="90%" class="tabDetailViewDL">
-		    Commit(s):
-		    </td>
-		    <td width="10%" class="tabDetailViewDF">
-		    <textarea rows="4" cols="60" name = "commits"></textarea>
-		    </td>
-		    </tr>
-		    </table>
-		    <BR>
-		    <input type=submit value="Cherry Pick!">
-		    </form>
-EOQ;
-            echo $output;
+
+            $this->ss->display('modules/githb_commits/tpls/cherrypick.tpl');
             die();
         }
 
@@ -59,8 +40,13 @@ EOQ;
             echo "<br> Starting import<br>";
             $github = new phpGitHubApi();
             $github->authenticate($loginname, $secret);
-            $commits = explode(', ', $_REQUEST['commits']);
+            $commits = preg_replace("#,#", PHP_EOL, $_REQUEST['commits']);
+            $commits = explode(PHP_EOL,$commits);
+
+
             foreach ($commits as $commit) {
+                // trim off any whitespace
+                $commit = trim($commit);
                 //foreach ($repos as $username => $repo) {
                 foreach($arrRepos as $_repo) {
                     list($username, $repo) = preg_split("#,#", $_repo);
