@@ -49,7 +49,7 @@ $installdefs = array(
             'module' => 'githb_commits',
             'class' => 'githb_commits',
             'path' => 'modules/githb_commits/githb_commits.php',
-            'tab' => false,
+            'tab' => true,
         ),
     ),
     'layoutdefs' =>
