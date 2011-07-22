@@ -36,9 +36,9 @@ $manifest = array(
     'icon' => '',
     'is_uninstallable' => true,
     'name' => 'Github Commits',
-    'published_date' => '2010-12-15 20:38:38',
+    'published_date' => '2011-07-22',
     'type' => 'module',
-    'version' => '1.2.0',
+    'version' => '1.5.0',
     'remove_tables' => 'prompt',
 );
 $installdefs = array(
@@ -58,18 +58,11 @@ $installdefs = array(
             'from' => '<basepath>/SugarModules/relationships/layoutdefs/Bugs.php',
             'to_module' => 'Bugs',
         ),
-        array(
-            'from' => '<basepath>/SugarModules/relationships/layoutdefs/ITRequests.php',
-            'to_module' => 'ITRequests',
-        ),
     ),
     'relationships' =>
     array(
         array(
             'meta_data' => '<basepath>/SugarModules/relationships/relationships/githb_commits_bugsMetaData.php',
-        ),
-        array(
-            'meta_data' => '<basepath>/SugarModules/relationships/relationships/githb_commits_itrequestsMetaData.php',
         ),
     ),
     'image_dir' => '<basepath>/icons',
@@ -95,6 +88,10 @@ $installdefs = array(
             'from' => '<basepath>/GitPostPushCapture.php',
             'to' => 'GitPostPushCapture.php',
         ),
+        array(
+            'from' => '<basepath>/custom/include/phpGitHub',
+            'to' => 'custom/include/phpGitHub',
+        ),
     ),
     'language' =>
     array(
@@ -111,11 +108,6 @@ $installdefs = array(
         array(
             'from' => '<basepath>/SugarModules/relationships/language/githb_commits.php',
             'to_module' => 'githb_commits',
-            'language' => 'en_us',
-        ),
-        array(
-            'from' => '<basepath>/SugarModules/relationships/language/ITRequests.php',
-            'to_module' => 'ITRequests',
             'language' => 'en_us',
         ),
         array(

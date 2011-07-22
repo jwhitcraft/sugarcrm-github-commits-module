@@ -55,10 +55,7 @@ EOQ;
 
             $repos = array('sugarcrm' => 'Mango');
             include('modules/Bugs/Bug.php');
-            include('modules/ITRequests/ITRequest.php');
-            include('modules/c_Contributor/c_Contributor.php');
-            include('modules/c_Contribution/c_Contribution.php');
-            require_once('custom/si_custom_files/phpGitHub/phpGitHubApi.php');
+            require_once('custom/include/phpGitHub/phpGitHubApi.php');
             echo "<br> Starting import<br>";
             $github = new phpGitHubApi();
             $github->authenticate($loginname, $secret);
