@@ -63,8 +63,13 @@ $mod_strings = array (
   'LBL_COMMITTER' => 'Committer',
   'LBL_COMMIT_HASH' => 'Hash',
   'LBL_GITHUB_CONNECTOR' => 'Configure Github Connector',
+  'LBL_GITHUB_USERCONFIG' => 'Configure Github User',
     'LBL_GITHB_ACCESS_HASH' => 'URL Access Hash',
     'LBL_GITHUB_CALLBACK_URL' => 'Github Service URL',
     'LBL_GITHUB_GENERATE' => 'Generate Random Key',
+    'LBL_GITHUB_USERNAME' => 'GitHub User Name',
+    'LBL_GITHUB_USERSECRET' => 'GitHub User Secret',
+    'LBL_GITHUB_REPOS' => 'Repositories to Check',
+    'LBL_GITHUB_REPOSHELP' => 'Enter repositories in the following format <user>,<repo> with each repository separated by a carriage return',
 );
 ?>
