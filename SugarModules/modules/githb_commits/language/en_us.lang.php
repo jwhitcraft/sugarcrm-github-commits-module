@@ -72,5 +72,6 @@ $mod_strings = array (
     'LBL_GITHUB_REPOS' => 'Repositories to Check',
     'LBL_GITHUB_REPOSHELP' => 'Enter repositories in the following format <user>,<repo> with each repository separated by a carriage return',
     'LBL_CHERRY_PICK' => 'Cherry Pick Commits',
+    'LBL_CHERRY_PICK_LABEL' => 'Enter valid GitHub commit guids',
 );
 ?>

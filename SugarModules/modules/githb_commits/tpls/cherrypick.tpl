@@ -10,16 +10,15 @@
                                 <tr>
                                     <th align="left" scope="row" colspan="2">
                                         <h4>
-                                        {$MOD.LBL_GITHUB_CONNECTOR}
+                                        {$MOD.LBL_CHERRY_PICK}
                                         </h4>
                                     </th>
                                 </tr>
                                 <tr>
                                     <td scope="row" width='25%'>
-                                    &nbsp;
+                                    {$MOD.LBL_CHERRY_PICK_LABEL}
                                     </td>
                                     <td>
-                                        <p>Please enter a valid GitHub commit guid</p>
                                         <textarea id="github_commits" name="commits" rows="10" cols="80"></textarea>
                                         <p><strong>Note:</strong> Multiple commits may be imported by separating the commits with commas or line return</p>
                                     </td>
