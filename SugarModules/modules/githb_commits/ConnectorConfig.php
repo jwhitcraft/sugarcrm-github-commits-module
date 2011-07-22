@@ -47,8 +47,9 @@ if (isset($_REQUEST['save_config']) && $_REQUEST['save_config'] != '0') {
 
 $sugar_smarty->assign('APP', $GLOBALS['app_strings']);
 $sugar_smarty->assign('MOD', $GLOBALS['mod_strings']);
-$sugar_smarty->assign('GITHUB_KEY', (isset($sugar_config['github_key'])) ? $sugar_config['github_key'] : '');
+$key = (isset($sugar_config['github_key'])) ? $sugar_config['github_key'] : '';
+$sugar_smarty->assign('GITHUB_KEY', $key);
 
-$sugar_smarty->assign('GITHUB_URL', $sugar_config['site_url'] . 'GitPostPushCapture.php?key=' . (isset($sugar_config['github_key'])) ? $sugar_config['github_key'] : '');
+$sugar_smarty->assign('GITHUB_URL', $sugar_config['site_url'] . 'GitPostPushCapture.php?key=' . $key);
 
 echo $sugar_smarty->fetch('modules/githb_commits/ConnectorConfig.tpl');
