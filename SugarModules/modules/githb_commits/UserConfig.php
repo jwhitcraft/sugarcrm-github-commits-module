@@ -45,8 +45,8 @@ if (isset($_REQUEST['save_config']) && $_REQUEST['save_config'] != '0') {
 
 $sugar_smarty->assign('APP', $GLOBALS['app_strings']);
 $sugar_smarty->assign('MOD', $GLOBALS['mod_strings']);
-$sugar_smarty->assign('GITHUB_USERNAME', $sugar_config['github_username']);
-$sugar_smarty->assign('GITHUB_USERSECRET', $sugar_config['github_secret']);
-$sugar_smarty->assign('GITHUB_REPOS', $sugar_config['github_repos']);
+$sugar_smarty->assign('GITHUB_USERNAME', (isset($sugar_config['github_username'])) ? $sugar_config['github_username'] : '');
+$sugar_smarty->assign('GITHUB_USERSECRET', (isset($sugar_config['github_secret'])) ? $sugar_config['github_secret'] : '');
+$sugar_smarty->assign('GITHUB_REPOS', (isset($sugar_config['github_repos'])) ? $sugar_config['github_repos'] : '');
 
 echo $sugar_smarty->fetch('modules/githb_commits/UserConfig.tpl');
