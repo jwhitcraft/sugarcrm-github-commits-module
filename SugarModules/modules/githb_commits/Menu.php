@@ -15,5 +15,5 @@ if(ACLController::checkAccess('githb_commits', 'list', true))
 }
 if(ACLController::checkAccess('githb_commits', 'edit', true))
 {
-	$module_menu[] = Array("index.php?module=githb_commits&action=cherrypick", 'LBL_CHERRY_PICK',"LBL_CHERRY_PICK", 'githb_commits');
+	$module_menu[] = Array("index.php?module=githb_commits&action=cherrypick", $mod_strings['LBL_CHERRY_PICK'],"CherryPickGithubCommits", 'githb_commits');
 }

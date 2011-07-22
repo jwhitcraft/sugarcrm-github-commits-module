@@ -38,7 +38,7 @@ $manifest = array(
     'name' => 'Github Commits',
     'published_date' => '2011-07-22',
     'type' => 'module',
-    'version' => '1.5.2',
+    'version' => '1.5.2.1',
     'remove_tables' => 'prompt',
 );
 $installdefs = array(
